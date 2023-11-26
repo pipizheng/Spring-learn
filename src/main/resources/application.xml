@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.samples"/>
+
+<!--    <bean id="exampleBean" class="com.samples.service.ExampleBean">-->
+<!--    &lt;!&ndash; setter injection using the nested ref element &ndash;&gt;-->
+<!--        <property name="beanOne" ref="anotherExampleBean"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="exampleBean" class="com.samples.service.ExampleBean">-->
+<!--        &lt;!&ndash; constructor injection using the nested ref element &ndash;&gt;-->
+<!--        <constructor-arg>-->
+<!--            <ref bean="anotherExampleBean"/>-->
+<!--        </constructor-arg>-->
+<!--    </bean>-->
+
+<!--    <bean id="anotherExampleBean" class="com.samples.entity.AnotherBean"/>-->
+
+
+
+    <!--    <bean id="sampleService" class="com.samples.service.SampleService"></bean>-->
+
+    <!--        &lt;!&ndash; services &ndash;&gt;-->
+    <!--        <bean id="sampleService" class="com.samples.service.SampleService">-->
+    <!--            <property name="accountDao" ref="accountDao"/>-->
+    <!--            <property name="itemDao" ref="itemDao"/>-->
+    <!--            &lt;!&ndash; additional collaborators and configuration for this bean go here &ndash;&gt;-->
+    <!--        </bean>-->
+    <!--        &lt;!&ndash; services &ndash;&gt;-->
+
+    <!--        <bean id="accountDao" class="com.samples.dao.AccountDao">-->
+    <!--            &lt;!&ndash; additional collaborators and configuration for this bean go here &ndash;&gt;-->
+    <!--        </bean>-->
+    <!--        <bean id="itemDao" class="com.samples.dao.ItemDao">-->
+    <!--            &lt;!&ndash; additional collaborators and configuration for this bean go here &ndash;&gt;-->
+    <!--        </bean>-->
+
+</beans>
