@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!--    数据源配置-->
+    <bean id="sampleDataSource" parent="templateDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${vinanalysis.jdbcUrl}"/>
+        <property name="username" value="${vinanalysis.user}"/>
+        <property name="password" value="${vinanalysis.password}"/>
+    </bean>
+    <context:property-placeholder location="jdbc.properties"/>
+
+<!--    ORM框架配置-->
+    <bean id="sampleSessionFactory"
+          class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="testDataSource"/>
+        <property name="configLocation" value="classpath:mybatis-config.xml"/>
+    </bean>
+
+    <bean id="sampleSqlMapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sampleSessionFactory"/>
+        <property name="basePackage" value="com.samples.dao"/>
+    </bean>
+
+</beans>
